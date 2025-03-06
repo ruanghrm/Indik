@@ -1,0 +1,115 @@
+/* Estilos da Seção "Sobre a Sansol" */
+.about-sansol {
+    background: linear-gradient(135deg, #f4f7fa, #ffffff);
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    margin: 60px auto;
+    width: 98%;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-sansol h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0077b6;
+    margin-bottom: 30px;
+    animation: fadeInDown 1s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.about-sansol h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    border-radius: 2px;
+}
+
+.about-sansol p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease;
+}
+
+/* Efeitos de fundo dinâmico */
+.about-sansol::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 123, 182, 0.1);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+.about-sansol::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+/* Animações */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .about-sansol {
+        padding: 60px 20px;
+    }
+
+    .about-sansol h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-sansol p {
+        font-size: 1.1rem;
+    }
+}

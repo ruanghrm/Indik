@@ -1,0 +1,190 @@
+.how-it-works {
+    background: linear-gradient(135deg, #ffffff, #f4f7fa);
+    padding: 60px 15px;
+    border-radius: 12px;
+    margin: 40px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 48%; 
+}
+
+.how-it-works h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0077b6;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.how-it-works h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    border-radius: 2px;
+}
+
+.how-it-works .steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.how-it-works .step {
+    flex: 1;
+    min-width: 220px;
+    padding: 30px 15px;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.how-it-works .step::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.how-it-works .step:hover::before {
+    transform: scale(1);
+}
+
+.how-it-works .step:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.how-it-works .step i {
+    font-size: 2rem;
+    color: #ffdd57;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.how-it-works .step:hover i {
+    transform: rotate(15deg) scale(1.05);
+}
+
+.how-it-works .step p {
+    font-size: 1rem; 
+    line-height: 1.4;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+.how-it-works .step::after {
+    content: attr(data-step);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.how-it-works::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 130px;
+    height: 130px;
+    background: rgba(0, 123, 182, 0.1);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+.how-it-works::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 130px;
+    height: 130px;
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .how-it-works {
+        padding: 40px 15px;
+        width: 100%; /* Ocupa 100% da largura */
+        margin: 20px auto; /* Ajusta a margem */
+    }
+
+    .how-it-works h2 {
+        font-size: 1.8rem; /* Reduz o tamanho do título */
+    }
+
+    .how-it-works .steps {
+        flex-direction: column; /* Coloca os passos em coluna */
+        gap: 20px; /* Espaçamento entre os passos */
+    }
+
+    .how-it-works .step {
+        min-width: 100%; /* Ocupa 100% da largura */
+        padding: 20px 15px; /* Ajusta o padding */
+    }
+
+    .how-it-works .step i {
+        font-size: 1.8rem; /* Reduz o tamanho do ícone */
+    }
+
+    .how-it-works .step p {
+        font-size: 0.95rem; /* Reduz o tamanho do texto */
+    }
+}

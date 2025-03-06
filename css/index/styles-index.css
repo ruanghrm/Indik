@@ -1,0 +1,11 @@
+@import url('header-index.css');
+@import url('welcome-index.css');
+@import url('works-index.css');
+@import url('stats-index.css');
+@import url('footer-index.css');
+@import url('about-index.css');
+
+html {
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,89 @@
+.nova-indicacao {
+    margin-top: 70px;
+    margin-bottom: 20px;
+    height: 440px;
+    position: absolute;
+    top: 20px; /* Distância do topo */
+    left: 20px; /* Distância da esquerda */
+    background: linear-gradient(135deg, #003366, #0077b6);    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 48%; /* Largura de 48% */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    box-sizing: border-box;
+}
+
+.nova-indicacao h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    transform: scale(1.02);
+}
+
+.btn-indicar {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #ff6f61, #ff4d4d);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-indicar:hover {
+    background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

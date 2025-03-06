@@ -1,0 +1,105 @@
+/* Estilo da seção da tabela */
+.tabela-indicacoes {
+    margin-top: 40px; /* Espaçamento acima da tabela */
+    padding: 2rem;
+    background: linear-gradient(135deg, #003366, #0077b6);    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    width: 90%; /* Ocupa 100% da largura disponível */
+    box-sizing: border-box;
+}
+
+.tabela-indicacoes h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo da tabela */
+.tabela-indicacoes table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabela-indicacoes th,
+.tabela-indicacoes td {
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+}
+
+.tabela-indicacoes th {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.tabela-indicacoes tbody tr {
+    transition: background 0.3s ease;
+}
+
+.tabela-indicacoes tbody tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.status {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    color: #fff; /* Texto branco */
+    border: 2px solid transparent; /* Borda para mais destaque */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.status.confirmada {
+    background: #4CAF50; /* Verde sólido */
+    border-color: #388E3C; /* Borda verde mais escura */
+}
+
+.status.pendente {
+    background: #FFC107; /* Amarelo sólido */
+    border-color: #FFA000; /* Borda amarela mais escura */
+}
+
+.status.concluida {
+    background: #2196F3; /* Azul sólido */
+    border-color: #1976D2; /* Borda azul mais escura */
+}
+
+/* Efeito de hover nos status */
+.status:hover {
+    transform: scale(1.05); /* Aumenta levemente o tamanho ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para mais destaque */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .tabela-indicacoes {
+        padding: 1rem;
+    }
+
+    .tabela-indicacoes th,
+    .tabela-indicacoes td {
+        padding: 0.75rem;
+    }
+
+    .tabela-indicacoes h2 {
+        font-size: 1.5rem;
+    }
+}

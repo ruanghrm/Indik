@@ -1,0 +1,47 @@
+.grafico-indicacoes {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 2rem;
+    background: linear-gradient(135deg, #003366, #0077b6);    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    justify-self: center;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.grafico-indicacoes h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.grafico-indicacoes canvas {
+    justify-self: center;
+    width: 90% !important;
+    height: 500px !important;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .grafico-indicacoes {
+        padding: 1rem;
+    }
+
+    .grafico-indicacoes h2 {
+        font-size: 1.5rem;
+    }
+
+    .grafico-indicacoes canvas {
+        height: 300px !important;
+    }
+}
