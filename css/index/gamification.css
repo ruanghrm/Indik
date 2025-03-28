@@ -1,0 +1,121 @@
+.gamification {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    padding: 60px 20px;
+    border-radius: 16px;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 98%;
+    max-width: 100%;
+}
+
+.gamification h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gamification h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #d97706, #f59e0b);
+    border-radius: 2px;
+}
+
+.gamification .steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.gamification .step {
+    flex: 1;
+    min-width: 220px;
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    text-align: center;
+}
+
+.gamification .step:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gamification .step i {
+    font-size: 2rem;
+    color: #d97706;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.gamification .step:hover i {
+    transform: scale(1.1);
+    color: #f59e0b;
+}
+
+.gamification .step h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 10px;
+}
+
+.gamification .step p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #6b7280;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .gamification {
+        padding: 40px 15px;
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .gamification h2 {
+        font-size: 1.8rem;
+    }
+
+    .gamification .steps {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gamification .step {
+        min-width: 100%;
+    }
+}

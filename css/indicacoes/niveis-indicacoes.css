@@ -1,103 +1,232 @@
-.barra-progresso-container {
+.gamification-container {
+    max-width: 90%; /* Alterado para ocupar 90% da largura */
+    width: 90%; /* Garante que ocupará 90% mesmo em telas menores */
+    margin: 5rem auto 2rem; /* Aumentei a margem superior para descer o conteúdo */
+    padding: 2.5rem 2rem; /* Aumentei um pouco o padding */
+    background: linear-gradient(135deg, #f8fbfe 0%, #e6f0fa 100%);
+    border-radius: 24px;
+    box-shadow: 0 12px 24px rgba(0, 82, 163, 0.1);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    position: relative; /* Adicionado para melhor controle */
+  }
+  
+  /* Barra de Progresso */
+  .level-tracker {
     position: relative;
-    width: 60%; /* A barra vai ocupar no máximo 60% da largura da tela */
-    height: 10px; /* Altura reduzida da barra de progresso */
-    margin-left: auto;
-    margin-right: auto; /* Centraliza a barra */
-    margin-top: 100px; /* Ajuste para mover a barra para baixo */
-    transform: translateX(10px); /* Desloca a barra para a direita para começar no centro da bolinha 1 */
-}
-
-.bolinha {
-    width: 20px; /* Ajuste do tamanho da bolinha */
-    height: 20px; /* Ajuste do tamanho da bolinha */
-    border-radius: 50%; /* Deixa a bolinha arredondada */
-    background-color: #004164; /* Cor verde das bolinhas */
+    padding: 40px 0;
+  }
+  
+  .progress-bar {
+    height: 12px;
+    background: rgba(0, 102, 204, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
     position: relative;
-    top: -5px; /* Ajuste para alinhar as bolinhas verticalmente */
-}
-
-.barra-progresso {
+  }
+  
+  .progress-fill {
+    height: 100%;
+    width: 25%;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 8px;
+    position: relative;
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .progress-fill::after {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%; /* Mantém a altura da barra conforme o container */
-    background-color: #45aee6; /* Cor da barra */
-    transition: width 10s ease-in-out;
-    margin-left: 15px;
-}
-
-.bolinhas-container {
-    position: relative;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+                rgba(255,255,255,0.8) 0%, 
+                rgba(255,255,255,0) 50%, 
+                rgba(255,255,255,0.8) 100%);
+    animation: shine 2.5s infinite linear;
+  }
+  
+  /* Marcadores de Nível */
+  .level-marks {
     display: flex;
     justify-content: space-between;
-    margin-top: 5px;
-}
-
-.bolinha.alcancado {
-    background-color: #45aee6; /* Cor das bolinhas ativadas */
-}
-
-.niveis {
-    font-size: 16px; /* Tamanho da fonte adequado */
-    font-weight: bold; /* Deixa o texto em negrito */
-    color: #004164; /* Cor verde para dar destaque ao progresso */
-    margin-top: 10px; /* Espaçamento acima */
-    text-align: center; /* Alinha o texto ao centro */
-    background-color: #f0f8f4; /* Cor de fundo suave */
-    padding: 8px 16px; /* Padding interno para deixar mais espaçoso */
-    border-radius: 25px; /* Bordas arredondadas para suavizar o visual */
-    border: 2px solid #004164; /* Borda verde para destacar */
-    width: fit-content; /* A largura vai se ajustar ao conteúdo */
-    margin-left: auto;
-    margin-right: auto; /* Centraliza o campo na tela */
-}
-
-.niveis span {
-    font-size: 18px; /* Tamanho maior para o número do nível */
-    font-weight: 600; /* Levemente mais pesado para chamar atenção */
-    color: #333; /* Cor de texto mais escura para maior legibilidade */
-}
-
-
-/* Seção de Prêmios */
-.premios {
-    margin-top: 100px;
-    text-align: center;
-    color: #333;
-}
-
-.premios h3 {
-    font-size: 1.6rem;
-    color: black;
-    margin-bottom: 20px;
-}
-
-.premios .lista-premios {
+    position: absolute;
+    width: 100%;
+    top: 30px;
+  }
+  
+  .level-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #cce0f5;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0, 82, 163, 0.1);
+  }
+  
+  .level-dot.active {
+    border-color: #4facfe;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.3);
+  }
+  
+  .level-dot::after {
+    content: attr(data-level);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .level-dot.active::after {
+    opacity: 1;
+  }
+  
+  /* Rótulos de Nível */
+  .level-labels {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.premios .premio {
-    background: #fff;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px;
-    width: 200px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.premios .premio-conquistado {
-    background-color: #00b4d8;
-    color: #fff;
-}
-
-.premios .premio a {
-    text-decoration: none;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  .level-labels span {
+    font-size: 12px;
     font-weight: 600;
-    color: #0077b6;
+    color: #6b8db4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  .level-labels span:first-child {
+    color: #4facfe;
+  }
+  
+  /* Display de Nível Atual */
+  .current-level-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 82, 163, 0.08);
+  }
+  
+  .level-badge {
+    display: flex;
+    align-items: center;
+  }
+  
+  .level-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-right: 12px;
+    line-height: 1;
+  }
+  
+  .level-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2c3e50;
+  }
+  
+  .level-progress {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6b8db4;
+    padding: 8px 16px;
+    background: rgba(0, 102, 204, 0.08);
+    border-radius: 20px;
+  }
+  
+  /* Seção de Recompensas */
+  .rewards-section {
+    margin-top: 2rem;
+  }
+  
+  .rewards-section h3 {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  .rewards-section h3::after {
+    content: '';
     display: block;
-    margin-top: 10px;
-}
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    margin: 8px auto 0;
+    border-radius: 3px;
+  }
+  
+  .rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+  }
+  
+  .reward-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 82, 163, 0.05);
+    border: 1px solid rgba(0, 102, 204, 0.1);
+  }
+  
+  .reward-card.upcoming {
+    opacity: 0.7;
+  }
+  
+  .reward-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .reward-card h4 {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 4px;
+  }
+  
+  .reward-card p {
+    font-size: 0.8rem;
+    color: #6b8db4;
+    font-weight: 500;
+  }
+  
+  /* Efeitos de Hover */
+  .level-dot:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.2);
+  }
+  
+  .reward-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 82, 163, 0.1);
+  }
+  
+  .reward-card:hover .reward-icon {
+    transform: scale(1.1);
+  }

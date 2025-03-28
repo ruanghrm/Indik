@@ -24,6 +24,38 @@
     margin: 0 auto;
 }
 
+.user-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+    font-weight: 700;
+}
+
+.user-action button {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;  
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.user-action button:hover {
+    transform: translateY(-3px);
+    background: #00b4d8;
+}
+
+.or-text {
+    margin: 0 15px; 
+    color: #0077b6;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
 .logo img {
     height: 50px;
     max-width: 200px;
@@ -85,42 +117,6 @@
     transform: scaleX(1);
 }
 
-.user-info {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #fff;
-}
-
-.user-info span {
-    font-weight: bold;
-    color: #ffdd57;
-    transition: color 0.3s ease;
-}
-
-.user-info span:hover {
-    color: #ffcc00;
-}
-
-.user-status {
-    background: #4caf50;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 12px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.user-status:hover {
-    background: #45a049;
-}
-
 .menu-toggle {
     display: none;
     background: none;
@@ -135,7 +131,6 @@
     transform: rotate(90deg);
 }
 
-/* Estilos para telas menores (responsivo) */
 @media (max-width: 768px) {
     .header-container {
         flex-wrap: nowrap;
@@ -146,7 +141,7 @@
     }
 
     .main-nav {
-        display: none; /* Esconde o menu por padrão */
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
@@ -157,7 +152,7 @@
     }
 
     .main-nav.open {
-        display: block; /* Mostra o menu quando a classe "open" é adicionada */
+        display: block;
     }
 
     .nav-list {
@@ -173,11 +168,11 @@
     }
 
     .menu-toggle {
-        display: block; /* Mostra o botão do menu hambúrguer */
+        display: block;
     }
 
     .user-info {
-        display: none; /* Esconde as informações do usuário em telas menores */
+        display: none;
     }
 }
 

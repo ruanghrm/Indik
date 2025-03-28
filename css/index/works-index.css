@@ -2,12 +2,13 @@
     background: linear-gradient(135deg, #ffffff, #f4f7fa);
     padding: 60px 15px;
     border-radius: 12px;
+    margin-right: 10px;
     margin: 40px auto;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     overflow: hidden;
     position: relative;
-    width: 48%; 
+    width: 50%; 
 }
 
 .how-it-works h2 {

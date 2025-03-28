@@ -4,6 +4,7 @@
 @import url('stats-index.css');
 @import url('footer-index.css');
 @import url('about-index.css');
+@import url('gamification.css');
 
 html {
     background: linear-gradient(90deg, #0077b6, #00b4d8);
